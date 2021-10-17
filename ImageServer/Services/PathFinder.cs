@@ -42,7 +42,7 @@
                 }
             }
 
-            if (index == parts.Length)
+            if (index == parts.Length && currChild.Children.Count == 0)
             {
                 this.PathExists = true;
             }
@@ -72,6 +72,9 @@
                 }
             }
 
+            // Every node has Children IF it is a folder
+            // IF node is actual file name it will NOT have any CHILDREN
+            // In future "last" nodes (actual files) will have List<Child> Formats (.jpg, .jpeg ...) 1 Image can have MANY formats and then the If will check if last node IS format node
             if (lastIndex == parts.Length && child.Children.Count == 0)
             {
                 watch.Stop();

@@ -32,7 +32,7 @@
             bool first = await this.pathFinder.PathExistsRecursive(parts, nodeService.GetRootNode());
             bool second = await this.pathFinder.PathExistsWhileLoop(parts, nodeService.GetRootNode());
 
-            if (second == true)
+            if (first == true)
             {
                 byte[] b = System.IO.File.ReadAllBytes(@"C:\Users\35989\Desktop\image.jpg");   // You can use your own method over here.
 
